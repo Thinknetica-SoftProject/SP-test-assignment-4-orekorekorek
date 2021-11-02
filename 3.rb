@@ -15,6 +15,7 @@ file = f.readlines
 code = 0
 for line in file do
     value = line.split
+    value = value.map {|j| j.to_i}
     min = value[0]
     max = min
 for i in value do
@@ -25,7 +26,7 @@ for i in value do
         min = i
     end
 end
-code += (max.to_i - min.to_i)
+code += (max - min)
 end
 f.close
 puts code
