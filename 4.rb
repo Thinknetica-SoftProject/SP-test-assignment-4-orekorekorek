@@ -15,5 +15,16 @@
 #
 #
 ## Решение:
-
+file_path = "data/4.txt"
+f = File.new(file_path, "r:UTF-8")
+file = f.readlines
+total_square = 0
+for line in file do
+    value = line.split("x")
+    value = value.map {|j| j.to_i}
+    value = value.sort
+    total_square += (2 * value[2] * value[0] + 2 * value[2] * value[1] + 2 * value[1] * value[0] + value[0] * value[1])
+end
+f.close
+puts total_square
 

@@ -15,7 +15,17 @@
 #
 #
 ## Решение:
-
-
-
+file_path = "data/1.txt"
+f = File.new(file_path, "r:UTF-8")
+current_floor = 0
+instructions = f.read.split("")
+instructions.each do |char|
+    if char == "("
+        current_floor += 1
+    elsif char == ")"
+        current_floor -= 1
+    end
+end
+f.close
+puts current_floor
 
